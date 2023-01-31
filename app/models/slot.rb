@@ -17,6 +17,6 @@ class Slot < ApplicationRecord
     is_overlapping = other_slots.any? do |other_slot|
       start_time <= other_slot.end_time && end_time >= other_slot.start_time
     end
-    errors.add(:overlaps_with_other, message: 'cannot overlap with other time slot') if is_overlapping
+    errors.add(:base, :invalid, message: 'Opening hours cannot overlap with another time slot') if is_overlapping
   end
 end
