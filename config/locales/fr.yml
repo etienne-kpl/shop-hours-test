@@ -1,2 +1,6 @@
 fr:
   hello: "Hello world"
+  closed: "Fermé"
+  hours: "Horaires :"
+  date:
+    day_names: [Dimanche, Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi]
