@@ -6,18 +6,31 @@
     <tbody>
       <% 7.times do |d| %>
         <% date_index = (Date.today + d).wday %>
-        <tr>
-          <td><%= t('date.day_names')[date_index] %></td>
-          <td>
-            <% unless @slots.where(weekday: date_index).empty? %>
-              <%= @slots.where(weekday: date_index).map do |slot| %>
-                <% "#{slot.start_time.strftime("%k:%M")}–#{slot.end_time.strftime("%k:%M")}" %>
-              <% end.join(', ') %>
-            <% else %>
-              <%= t('.closed') %>
-            <% end %>
-          </td>
-        </tr>
+        <% holidays = @shop.holidays.where(date: Date.today + d) %>
+        <% if holidays.empty? %>
+          <tr>
+            <td><%= t('date.day_names')[date_index] %></td>
+            <td>
+              <% if @slots.where(weekday: date_index).empty? %>
+                <%= t('.closed') %>
+              <% else %>
+                <%= render 'hours', hours: @slots.where(weekday: date_index) %>
+              <% end %>
+            </td>
+          </tr>
+        <% else %>
+          <tr class='holiday-green'>
+            <td><%= t('date.day_names')[date_index] %></td>
+            <td>
+              <% if holidays.all? { |holiday| holiday.start_time.nil? } %>
+                <%= t('.closed') %>
+              <% else %>
+                <%= render 'hours', hours: holidays %>
+              <% end %>
+            </td>
+            <td><%= t('.holiday') %></td>
+          </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>

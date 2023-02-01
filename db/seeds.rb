@@ -19,4 +19,9 @@ Shop.all.each do |shop|
   shop.slots.create(start_time: '10:30', end_time: '20:00', weekday: 6)
 end
 
+p 'Adding holiday to each shop...'
+Shop.all.each do |shop|
+  shop.holidays.create(date: '2023-02-06')
+end
+
 p 'Done!'
