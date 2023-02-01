@@ -5,4 +5,3 @@ fr:
     show:
       closed: "Fermé"
       hours: 'Horaires :'
-      day_names: [Dimanche, Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi]
