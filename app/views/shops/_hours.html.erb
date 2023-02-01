@@ -1,0 +1,3 @@
+<%= hours.map do |hour| %>
+  <% "#{hour.start_time.strftime("%k:%M")}–#{hour.end_time.strftime("%k:%M")}" %>
+<% end.join(', ') %>
