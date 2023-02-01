@@ -3,5 +3,6 @@ en:
     index:
       shops: "Our shops"
     show:
+      back: "Back"
       closed: "Closed"
       hours: 'Hours:'

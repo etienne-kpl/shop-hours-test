@@ -3,5 +3,6 @@ fr:
     index:
       shops: "Nos magasins"
     show:
+      back: "Retour"
       closed: "Fermé"
       hours: 'Horaires :'

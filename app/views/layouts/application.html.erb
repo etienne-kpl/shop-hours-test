@@ -11,6 +11,15 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <div>
+        <% if I18n.locale == :fr %>
+          <%= link_to 'en', url_for(locale: :en) %>
+        <% else %>
+          <%= link_to 'fr', url_for(locale: :fr) %>
+        <% end %>
+      </div>
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -1,0 +1,20 @@
+.shop-hours {
+  display: flex;
+
+  p {
+    font-weight: bold;
+    margin-top: 3px;
+  }
+
+  table tr:first-of-type {
+    font-weight: bold;
+  }
+
+  table {
+    border-spacing: 10px 2px;
+  }
+
+  table td {
+    margin-left: 5px;
+  }
+}

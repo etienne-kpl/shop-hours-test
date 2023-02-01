@@ -1,21 +1,24 @@
+<%= link_to t('.back'), shops_path %>
 <h1><%= @shop.name %></h1>
-<p><%= t('.hours') %></p>
-<table>
-  <tbody>
-    <% 7.times do |d| %>
-      <% date_index = (Date.today + d).wday %>
-      <tr>
-        <td><%= t('date.day_names')[date_index] %></td>
-        <td>
-          <% unless @slots.where(weekday: date_index).empty? %>
-            <%= @slots.where(weekday: date_index).map do |slot| %>
-              <% "#{slot.start_time.strftime("%k:%M")}–#{slot.end_time.strftime("%k:%M")}" %>
-            <% end.join(', ') %>
-          <% else %>
-            <%= t('.closed') %>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class='shop-hours'>
+  <p><%= t('.hours') %></p>
+  <table>
+    <tbody>
+      <% 7.times do |d| %>
+        <% date_index = (Date.today + d).wday %>
+        <tr>
+          <td><%= t('date.day_names')[date_index] %></td>
+          <td>
+            <% unless @slots.where(weekday: date_index).empty? %>
+              <%= @slots.where(weekday: date_index).map do |slot| %>
+                <% "#{slot.start_time.strftime("%k:%M")}–#{slot.end_time.strftime("%k:%M")}" %>
+              <% end.join(', ') %>
+            <% else %>
+              <%= t('.closed') %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
