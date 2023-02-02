@@ -1,6 +1,10 @@
 .shop-hours {
   display: flex;
 
+  .holiday-green {
+    color: green;
+  }
+
   p {
     font-weight: bold;
     margin-top: 3px;

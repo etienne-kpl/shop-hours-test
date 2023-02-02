@@ -1,7 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+paris:
+  name: "Le Collectionist - Paris"
 
-two:
-  name: MyString
+bordeaux:
+  name: "Le Collectionist - Bordeaux"
+
+marseille:
+  name: "Le Collectionist - Marseille"
+
+annecy:
+  name: "Le Collectionist - Annecy"
