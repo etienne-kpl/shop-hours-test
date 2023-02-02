@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-paris:
-  name: "Le Collectionist - Paris"
+one:
+  name: Le Collectionist - Paris
 
-bordeaux:
-  name: "Le Collectionist - Bordeaux"
+two:
+  name: Le Collectionist - Bordeaux
 
-marseille:
-  name: "Le Collectionist - Marseille"
+three:
+  name: Le Collectionist - Marseille
 
-annecy:
-  name: "Le Collectionist - Annecy"
+four:
+  name: Le Collectionist - Annecy
