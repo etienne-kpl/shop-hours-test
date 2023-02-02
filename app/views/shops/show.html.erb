@@ -22,7 +22,7 @@
           <tr class='holiday-green'>
             <td><%= t('date.day_names')[date_index] %></td>
             <td>
-              <% if holidays.all? { |holiday| holiday.start_time.nil? } %>
+              <% if holidays.any? { |holiday| holiday.start_time.nil? } %>
                 <%= t('.closed') %>
               <% else %>
                 <%= render 'hours', hours: holidays %>
