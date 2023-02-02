@@ -1,24 +1,38 @@
-# README
+# Le Collectionist - Technical test
+A Rails app that allows to consult opening hours for shops.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Built With
 
-Things you may want to cover:
+* Ruby 3.1.2
+* Rails 7.0.4.2
+* database: PostGreSQL
 
-* Ruby version
+## Getting Started
 
-* System dependencies
+### 1. Install gems
+  ```sh
+  bundle
+  ```
 
-* Configuration
+### 2. Initialize database
+  ```sh
+  rails db:create db:migrate db:seed
+  ```
 
-* Database creation
+### 3. Launch server
+  ```sh
+  rails server
+  ```
 
-* Database initialization
+## Code explanation
+We have 3 models : shop, slot (regular opening hours) and holiday (for exceptional hours). A shop can have many slots and many holidays. By default, a shop is closed everyday: its opening hours need to be defined with slots. A slot needs a start time and an end time, plus a weekday (0 to 6 => sunday to saturday). A holiday is used when a special occasion occurs, so it needs a date. A holiday set without a start time and end time means the shop will be closed on that date.
 
-* How to run the test suite
+## Language
+The app is ready to be used in French (default) and English with i18n.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Tests
+You can run tests with
+  ```sh
+  rails test:system
+  raild test:models
+  ```
