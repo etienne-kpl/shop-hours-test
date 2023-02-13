@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_01_155202) do
   enable_extension "plpgsql"
 
   create_table "holidays", force: :cascade do |t|
-    t.date "date"
+    t.date "date", null: false
     t.time "start_time"
     t.time "end_time"
     t.bigint "shop_id", null: false
@@ -25,18 +25,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_01_155202) do
   end
 
   create_table "shops", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "slots", force: :cascade do |t|
     t.bigint "shop_id", null: false
-    t.time "start_time"
-    t.time "end_time"
+    t.time "start_time", null: false
+    t.time "end_time", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "weekday"
+    t.integer "weekday", null: false
     t.index ["shop_id"], name: "index_slots_on_shop_id"
   end
 
